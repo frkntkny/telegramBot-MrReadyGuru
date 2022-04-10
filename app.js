@@ -13,7 +13,7 @@ const bot = new TelegramBot(token, {polling: true});
 // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (msg, match) => {
 
-  const chatId = '#93372553';
+  const chatId = '#-442113284';
   const resp = match[1]; // the captured "whatever"
 
   // send back the matched "whatever" to the chat
