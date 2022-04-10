@@ -28,13 +28,15 @@ bot.on('message', (msg) => {
   if(msg.text.substring(0, 6) === '/indir'){
     bot.sendMessage(chatId, '/indir');
     
-    let videoId = msg.text.split('=').pop().split('&')[0];
-    console.log(videoId);
+    let videoId = msg.text.split('&')[0];
+    let str = videoId.substring(videoId.indexOf("=") + 1);
+ 
+    console.log(str);
  
     const options = {
         method: 'GET',
         url: 'https://youtube-mp3-download1.p.rapidapi.com/dl',
-        params: {id: `${videoId}`},
+        params: {id: `${str}`},
         headers: {
           'X-RapidAPI-Host': 'youtube-mp3-download1.p.rapidapi.com',
           'X-RapidAPI-Key': 'e6bd8c286bmsha4f19331eb6d325p1f9d8ajsn784a34fb7bee'
