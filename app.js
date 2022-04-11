@@ -10,6 +10,15 @@ const token = '5168646935:AAEF3WZpUShu0y-6qzsztJWRPLNGGXfBb_w';
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
 
+bot.start((ctx) => {
+    ctx.reply('Hello ' + ctx.from.first_name + '!');
+  });
+  bot.help((ctx) => {
+    ctx.reply('Send /start to receive a greeting');
+    ctx.reply('Send /indir to get mp3 link of youtube video');
+    ctx.reply('Send /quit to stop the bot (DoES not work) ');
+  });
+
 // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (msg, match) => {
 
